@@ -1,0 +1,126 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 90%; /* Use 90% of the available screen width by default */
+  margin: 0 auto;
+  height: 60vh; /* Take 60% of the screen height */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 280px; /* Prevent shrinking below 280px */
+  min-height: 200px; /* Prevent shrinking below 200px */
+}
+
+.bubble {
+  padding: 10px 15px;
+  margin: 8px;
+  max-width: 70%;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.user {
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
+}
+
+.confidant {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mic-button, .reset-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.mic-button.gray { background: gray; }
+.mic-button.red { background: red; }
+.mic-button.orange { background: orange; }
+
+.reset-button {
+  background: #6c757d;
+}
+
+.reset-button:hover {
+  background: #5a6268;
+}
+
+.chat-bubble {
+  padding: 10px;
+  max-width: 75%;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.chat-bubble.user {
+  background-color: #14b8a6; /* Teal for user */
+  align-self: flex-end;  /* Align user message to the right */
+  color: white;
+}
+
+.chat-bubble.confidant {
+  background-color: #f3f4f6; /* Light grey for confidant */
+  align-self: flex-start;  /* Align confidant message to the left */
+  color: #333;
+}
+
+.chat-bubble-content {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .chat-window {
+    max-width: 95%; /* 95% of the screen width on smaller screens */
+    height: 50vh; /* 50% of screen height */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    max-width: 100%; /* Full width on very small screens */
+    height: 45vh; /* Adjust height */
+  }
+
+  .mic-button, .reset-button {
+    font-size: 0.9rem; /* Slightly smaller button text */
+    padding: 8px 16px; /* Slightly smaller buttons */
+  }
+
+  .bubble {
+    font-size: 11px; /* Reduce font size inside chat bubbles */
+  }
+}
