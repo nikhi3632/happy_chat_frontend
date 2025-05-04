@@ -1,7 +1,4 @@
-const host = process.env.REACT_APP_API_HOST;
-const port = process.env.REACT_APP_API_PORT;
-
-const baseUrl = `${host}:${port}`;
+const baseUrl = process.env.REACT_APP_API_URL;
 
 export async function apiFetch(path, options = {}) {
   const url = `${baseUrl}${path}`;
